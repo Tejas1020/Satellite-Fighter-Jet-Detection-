@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0f0e0e;
+            overflow: hidden;
+        }
+
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 600px;
+            padding: 50px;
+            background-color: #0d0d0d;
+            box-shadow: 0 30px 50px #dbdbdb;
+        }
+
+        #slide {
+            width: max-content;
+            margin-top: 50px;
+        }
+
+        .item {
+            width: 200px;
+            height: 300px;
+            background-position: 50% 50%;
+            display: inline-block;
+            transition: 0.5s;
+            background-size: cover;
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            transform: translate(0, -50%);
+            border-radius: 20px;
+            box-shadow: 0 30px 50px #505050;
+        }
+
+        .item:nth-child(1),
+        .item:nth-child(2) {
+            left: 0;
+            top: 0;
+            transform: translate(0, 0);
+            border-radius: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: none;
+        }
+
+        .item:nth-child(3) {
+            left: 50%;
+        }
+
+        .item:nth-child(4) {
+            left: calc(50% + 220px);
+        }
+
+        .item:nth-child(5) {
+            left: calc(50% + 440px);
+        }
+
+        .item:nth-child(n+6) {
+            left: calc(50% + 660px);
+            opacity: 0;
+        }
+
+        .item .content {
+            position: absolute;
+            top: 50%;
+            left: 100px;
+            width: 300px;
+            text-align: left;
+            padding: 0;
+            color: #eee;
+            transform: translate(0, -50%);
+            display: none;
+            font-family: system-ui;
+        }
+
+        .item:nth-child(2) .content {
+            display: block;
+            z-index: 11111;
+        }
+
+        .item .name {
+            font-size: 40px;
+            font-weight: bold;
+            opacity: 0;
+            animation: showcontent 1s ease-in-out 1 forwards
+        }
+
+        .item .des {
+            margin: 20px 0;
+            opacity: 0;
+            animation: showcontent 1s ease-in-out 0.3s 1 forwards
+        }
+
+        .item button {
+            padding: 10px 20px;
+            border: none;
+            opacity: 0;
+            animation: showcontent 1s ease-in-out 0.6s 1 forwards
+        }
+
+        @keyframes showcontent {
+            from {
+                opacity: 0;
+                transform: translate(0, 100px);
+                filter: blur(33px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(0, 0);
+                filter: blur(0);
+            }
+        }
+
+        .content {
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 10px; 
+    color: white; 
+    border-radius: 30%;
+    align-items: center;
+    height:fit-content;
+    width:fit-content
+}
+
+        .buttons {
+            position: absolute;
+            bottom: 30px;
+            z-index: 222222;
+            text-align: center;
+            width: 100%;
+        }
+
+        .buttons button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid #555;
+            transition: 0.5s;
+        }
+
+        .buttons button:hover {
+            background-color: #bac383;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="slide">
+            <div class="item" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/F-16_June_2008.jpg/1280px-F-16_June_2008.jpg');">
+
+                <div class="content">
+                    <div class="name">F-16 FIGHTING FALCON</div>
+                    <div class="des">
+                        <ul>
+                            <li>INTRODUCED:17 AUGUST 1978 </li>
+                            <li>RANGE: 4220km </li>
+                            <li>Engine type: Turbofan, General Electric F110</li>
+                            <li>WINGSPAN: 9.96m </li>
+                            <li>WEPAONS USED: Maverick , HARM , Shrike missile</li>
+                        </ul>
+                        
+                        </div>
+                     
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1e/F-86_Sabre_hertiage_flight.jpg');">
+                <div class="content">
+                    <div class="name">F-86 Sabre</div>
+                    <div class="des">  <ul>
+                        <li>INTRODUCED: 1949(Retired:1980) </li>
+                        <li>RANGE: 1611 km</li>
+                        <li>Engine type: Turbojet</li>
+                        <li>WINGSPAN: 11m </li>
+                        <li>WEPAONS USED: M-3, MiG-15</li>
+                    </ul>
+                </div>
+                     
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/F-22_Raptor_edit1_%28cropped%29.jpg/1280px-F-22_Raptor_edit1_%28cropped%29.jpg');">
+                <div class="content">
+                    <div class="name">F-22 Raptor</div>
+                    <div class="des"> 
+                        <ul>
+                            <li>INTRODUCED:15 December 2005 </li>
+                            <li>RANGE: 3000 km </li>
+                            <li>Engine type: turbofan, Pratt & Whitney F119 </li>
+                            <li>WINGSPAN: 14m </li>
+                            <li>WEPAONS USED: Medium Range Air-to-Air missile, Aim-9 Sidewinders</li>
+                        </ul>
+                    </div>
+                     
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/J-20_at_CCAS2022_%2820220827103424%29.jpg/1280px-J-20_at_CCAS2022_%2820220827103424%29.jpg');">
+                <div class="content">
+                    <div class="name">Chengdu J-20 Mighty Dragon</div>
+                    <div class="des">
+                        <ul>
+                            <li>INTRODUCED: 9 march 2017</li>
+                            <li>RANGE: 5296km </li>
+                            <li>Engine type: Xian WS-15, Turbofan </li>
+                            <li>WINGSPAN: 15m </li>
+                            <li>WEPAONS USED: Armament, Long range Air-to-Air missile, Precision-Guided munitions</li>
+                        </ul>
+                    </div>
+                     
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://www.airforce-technology.com/wp-content/uploads/sites/6/2012/05/Image-1-F-35-Lightning-II-Joint-Strike-Fighter-JSF-1.jpg');">
+                <div class="content">
+                    <div class="name">F-35 Lightning II</div>
+                    <div class="des">
+                        <ul>
+                            <li>INTRODUCED: 31 July 2015</li>
+                            <li>RANGE: 1931.2 km </li>
+                            <li>Engine type:Pratt & Whitney F135 </li>
+                            <li>WINGSPAN:10.67m </li>
+                            <li>WEPAONS USED: 25mm GAU-22/A cannon, AIM-120 AMRAAMs, GBU-31 JDAMs</li>
+                        </ul>
+                    </div>
+                     
+                </div>
+            </div>
+            <div class="item" style="background-image: url('https://defencedirecteducation.com/wp-content/uploads/2019/09/rafale-india.jpg');">
+                <div class="content">
+                    <div class="name">Dassault Rafale</div>
+                    <div class="des">
+                        <ul>
+                            <li>INTRODUCED: 18 May 2001</li>
+                            <li>RANGE: 3700 km </li>
+                            <li>Engine type: Turbofan, Snecma M88</li>
+                            <li>WINGSPAN: 11 m </li>
+                            <li>WEPAONS USED:Mica IR and EM air-to-air missiles, and precision ground attacks typically using SCALP EG cruise missiles and AASM Hammer air-to-surface missiles.</li>
+                        </ul>
+                    </div>
+                     
+                </div>
+            </div>
+        <div class="item" style="background-image: url('https://www.aerotime.aero/images/shutterstock_2094610309-800x516.jpg');">
+            <div class="content">
+                <div class="name">Sukhoi Su-57 </div>
+                <div class="des">  
+                    <ul>
+                        <li>INTRODUCED: 25 December 2020</li>
+                        <li>RANGE: 5500 km </li>
+                        <li>Engine type: Turbofan </li>
+                        <li>WINGSPAN: 14 m  </li>
+                        <li>WEPAONS USED: short-range Air-to-Air missile</li>
+                    </ul>
+                </div>
+                 
+            </div>
+        </div>
+    <div class="item" style="background-image: url('https://www.aerotime.aero/images/Shenyang_J-31_F60_at_2014_Zhuhai_Air_Show.jpeg');">
+        <div class="content">
+            <div class="name"> Shenyang FC-31 Gyrfalcon </div>
+            <div class="des">
+                <ul>
+                    <li>INTRODUCED: 31 October 2012 </li>
+                    <li>RANGE: 1250 km</li>
+                    <li>Engine type: Klimov RD-93 </li>
+                    <li>WINGSPAN: 11.5 m</li>
+                    <li>WEPAONS USED: PL-10 short-range missile and PL-12 medium-range air-to-air missile.</li>
+                </ul>
+            </div>
+             
+        </div>
+    </div>
+
+<div class="item" style="background-image: url('https://www.aerotime.aero/images/shutterstock_1737043019-800x509.jpg');">
+    <div class="content">
+        <div class="name">Boeing F-15EX Eagle II </div>
+        <div class="des"> 
+        <ul>
+            <li>INTRODUCED: MAY 2021</li>
+            <li>RANGE: 2223 km </li>
+            <li>Engine type: Two P&W F100 or two GE F110 turbofan engines in 29,000 lb (13,154 kg) thrust class with afterburning</li>
+            <li>WINGSPAN: 13.05 m </li>
+            <li>WEPAONS USED:F-15A/B/C/D air-to-air:
+                20mm cannon AIM-120 (AMRAM) missiles ,AIM-9 (Sidewinder) missiles, AIM-7 (Sparrow) missiles
+                F-15E Air-to-ground:Precision guided munitions, Variety of missiles and bombs
+                F-15E Air-to-air:Cannon, 8 medium- and short-range missiles
+                Advanced F-15:12 air-to-air missiles,24 air-to-ground munitions</li>
+        </ul>
+    </div>
+         
+    </div>
+    </div>
+</div>
+</div>
+
+        <div class="buttons">
+            <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+            <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('next').onclick = function () {
+            let lists = document.querySelectorAll('.item');
+            document.getElementById('slide').appendChild(lists[0]);
+        }
+        document.getElementById('prev').onclick = function () {
+            let lists = document.querySelectorAll('.item');
+            document.getElementById('slide').prepend(lists[lists.length - 1]);
+        }
+
+    </script>
+</body>
+</html>
