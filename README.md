@@ -13,6 +13,8 @@ Welcome to our Satellite Jet Detection project, a cutting-edge application of de
 * Visualization: We provide tools for visualizing the results, including bounding boxes around detected jets and trajectory paths. These visualizations aid in the interpretation and understanding of the model's output.
 
 * Easy Integration: The code and model in this repository are designed to be easily integrated into existing systems or used as a standalone solution for satellite-based jet detection.
+* ![image](https://github.com/Tejas1020/Satellite-Fighter-Jet-Detection-/assets/54032612/b82e5b6a-53e8-40e1-9726-88e7a45886af)
+
 
 # Why This Project Matters:
 * Aviation Safety: Accurate satellite-based jet detection can help prevent collisions and enhance aviation safety by providing real-time information about aircraft in restricted or remote airspace.
